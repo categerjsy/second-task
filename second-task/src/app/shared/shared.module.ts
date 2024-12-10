@@ -4,15 +4,19 @@ import { TranslateModule } from '@ngx-translate/core';
 import { LoginComponent } from '../login/login.component';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
+import { DeviceManagementComponent } from '../device-management/device-management.component';
 
 @NgModule({
-  declarations: [LoginComponent], // Declarαtion of LoginComponent here
+  declarations: [LoginComponent,
+    DeviceManagementComponent],
   imports: [
     CommonModule,
     IonicModule,
     TranslateModule,// Import necessary modules here
     FormsModule
   ],
-  exports: [LoginComponent] // Export LoginComponent for use in other modules
+  exports: [LoginComponent,
+    DeviceManagementComponent
+  ]
 })
 export class SharedModule { }

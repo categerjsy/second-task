@@ -13,6 +13,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-login></app-login>
-
+  <app-login *ngIf="!authorized"></app-login>
+  <app-device-management *ngIf="authorized"></app-device-management>
+  
 </ion-content>

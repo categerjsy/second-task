@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import { PreloadAllModules } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +8,21 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  authorized: boolean = false;
 
-  constructor() { }
 
+  constructor(private authService: AuthService) { }
+
+  ngOnInit() {
+    this.checkAuthorization(); // Check authorization when the component is initialized
+  }
+
+  ngDoCheck() {
+    this.checkAuthorization(); // Check authorization whenever the component is checked for changes
+  }
+
+  // Method to check if the user is authorized
+  checkAuthorization() {
+    this.authorized = this.authService.isLoggedIn(); // Set authorized to true if logged in
+  }
 }

@@ -28,10 +28,11 @@
       </ion-img>
     </ion-input>
 
-    <ion-button expand="block" class="login-button" [disabled]="!isValid()" (click)="login()">
+    <ion-button expand="block" class="login-button" [disabled]="!isValid()" (click)="login()" id="open-loading">
       {{ 'login.connect' | translate }}
     </ion-button>
 
   </form>
+  <ion-loading class="custom-loading" [isOpen]="isLoading" message="Loading..." [duration]="3000"></ion-loading>
 
 </div>
