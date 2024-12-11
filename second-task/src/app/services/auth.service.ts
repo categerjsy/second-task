@@ -7,17 +7,21 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root',
 })
 export class AuthService {
-  private tokenKey: string = 'authToken'; // Key for storing the token
-  private userKey: string = 'userData'; //Key for storing the user
+  private tokenVar: string = ''; // Store token in memory (no persistence across reloads)
+  private userDataVar: any = null; // Store user data in memory (no persistence across reloads)
 
   constructor(private webService: WebService) { }
 
-  // Login method
+  /**
+   * Login method
+   * @param email - User's email
+   * @param password - User's password
+   * @returns Observable<any>
+   */
   login(email: string, password: string): Observable<any> {
     const endpoint = '/api/v1/user/login';
     const data = { email, password };
 
-    // Μετατροπή των headers σε HttpHeaders
     const headers = new HttpHeaders({
       Accept: 'application/json',
       lang: 'el',
@@ -26,31 +30,51 @@ export class AuthService {
     return this.webService.post(endpoint, data, headers);
   }
 
-
-  // Save token to localStorage
+  /**
+   * Save token in memory (no persistence)
+   * @param token - Authentication token
+   */
   setToken(token: string): void {
-    let tokenVar = 'Bearer ' + token; // Token 
-    localStorage.setItem(this.tokenKey, tokenVar); // Save to localStorage
+    this.tokenVar = `Bearer ${token}`;
   }
 
-  // Save user data to localStorage
+  /**
+   * Save user data in memory (no persistence)
+   * @param userData - User data object
+   */
   setUserData(userData: any): void {
-    localStorage.setItem(this.userKey, JSON.stringify(userData));
+    this.userDataVar = userData;
   }
 
-  // Retrieve token from localStorage
-  getToken(): string | null {
-    return localStorage.getItem(this.tokenKey);
+  /**
+   * Retrieve token from memory
+   * @returns string
+   */
+  getToken(): string {
+    return this.tokenVar;
   }
 
-  // Check if the user is logged in
+  /**
+   * Retrieve user data from memory
+   * @returns any
+   */
+  getUserData(): any {
+    return this.userDataVar;
+  }
+
+  /**
+   * Check if the user is logged in
+   * @returns boolean
+   */
   isLoggedIn(): boolean {
     return !!this.getToken(); // Returns true if a token exists
   }
 
-  // Logout the user
+  /**
+   * Logout the user
+   */
   logout(): void {
-    localStorage.removeItem(this.tokenKey); // Remove the token
-    localStorage.removeItem(this.userKey); // Remove the user data
+    this.tokenVar = ''; // Clear the token in memory
+    this.userDataVar = null; // Clear the user data in memory
   }
 }

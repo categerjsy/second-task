@@ -67,55 +67,30 @@
         </ion-col>
       </ion-row>
 
-      <div class="line-form">
-        <div class="attribute">
-          <div class="form-group">
-            <label for="identifier">{{ 'device-form.identifier' | translate }}</label>
-            <div class="identifier-group">
-              <ion-input type="text" id="identifier" placeholder="{{ 'device-form.p-identifier' | translate }}" class="form-input ident"/>
-              <ion-button type="button" class="create-btn">
-                {{ 'device-form.generate' | translate }}
-              </ion-button>
-            </div>
+
+      <div class="second">
+
+        <div class="form-group">
+          <label for="identifier">{{ 'device-form.identifier' | translate }}</label>
+          <div class="identifier-group">
+            <ion-input type="text" id="identifier" placeholder="{{ 'device-form.p-identifier' | translate }}"
+              class="form-input ident white-disabled" disabled>
+            </ion-input>
+            <ion-button class="create-btn">
+              {{ 'device-form.generate' | translate }}
+            </ion-button>
           </div>
+
         </div>
+
       </div>
 
-      <!-- <form>
-      
- 
-          <legend>{{ 'device-form.general-info' | translate }}</legend>
-          <div class="form-group">
-            <label for="manufacturer">{{ 'device-form.manufacturer' | translate }}</label>
-            <input type="text" id="manufacturer" placeholder="{{ 'device-form.p-manufacturer' | translate }}" />
-          </div>
-          <div class="form-group">
-            <label for="model">{{ 'device-form.model' | translate }}</label>
-            <input type="text" id="model" placeholder="{{ 'device-form.p-model' | translate }}" />
-          </div>
-          <div class="form-group">
-            <label for="os">{{ 'device-form.os' | translate }}</label>
-            <input type="text" id="os" placeholder="{{ 'device-form.p-os' | translate }}" />
-          </div>
-      
+    </div>
 
-   
-          <legend>{{ 'device-form.identifier-info' | translate }}</legend>
-          <div class="form-group">
-            <label for="identifier">{{ 'device-form.identifier' | translate }}</label>
-            <div class="identifier-group">
-              <input type="text" id="identifier" placeholder="{{ 'device-form.p-identifier' | translate }}" />
-              <button type="button" class="create-btn">
-                {{ 'device-form.generate' | translate }}
-              </button>
-            </div>
-          </div>
-  
-
-        <button type="submit" class="submit-btn">
-          {{ 'device-form.add' | translate }} 
-        </button>
-      </form> -->
+    <div class="footer">
+      <ion-button expand="block" class="submit-button">
+        {{ 'device-form.add' | translate }}
+      </ion-button>
     </div>
   </div>
 </div>

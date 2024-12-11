@@ -7,9 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class WebService {
 
-  private baseUrl: string = 'https://testapiserver.com'; // Server IP address
-  private apiKey: string = '9f02f499-cd68-4ede-a3e8-fbb00c3bcde8'; // ApiKey
-  private tokenKey: string = 'authToken';
+  private baseUrl: string = 'https://testapiserver.com'; // Server base URL
+  private apiKey: string = '9f02f499-cd68-4ede-a3e8-fbb00c3bcde8'; // API Key
+
   constructor(private http: HttpClient) { }
 
   // Helper method to create headers
@@ -19,18 +19,12 @@ export class WebService {
       'Content-Type': 'application/json' // Default content type
     });
 
-    // Retrieve token from localStorage and add to headers if available
-    const token = localStorage.getItem(this.tokenKey);
-    if (token) {
-      headers = headers.set('Authorization', token); // Add Bearer token
-    }
-
+    // If additional headers are passed, add them
     if (additionalHeaders) {
       additionalHeaders.keys().forEach(key => {
         headers = headers.set(key, additionalHeaders.get(key)!);
       });
     }
-
 
     return headers;
   }
