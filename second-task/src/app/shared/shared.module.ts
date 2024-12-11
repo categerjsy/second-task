@@ -6,11 +6,16 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { DeviceManagementComponent } from '../device-management/device-management.component';
 import { DeviceComponent } from '../device/device.component';
+import { DeviceFormComponent } from '../device-form/device-form.component';
+import { CustomPopoverComponent } from '../custom-popover/custom-popover.component';
 
 @NgModule({
   declarations: [LoginComponent,
     DeviceManagementComponent,
-    DeviceComponent],
+    DeviceComponent,
+    DeviceFormComponent,
+    CustomPopoverComponent
+  ],
   imports: [
     CommonModule,
     IonicModule,
@@ -20,7 +25,10 @@ import { DeviceComponent } from '../device/device.component';
   ],
   exports: [LoginComponent,
     DeviceManagementComponent,
-    DeviceComponent
+    DeviceComponent,
+    DeviceFormComponent,
+    CustomPopoverComponent
+
   ]
 })
 export class SharedModule { }

@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Device } from '../models/device.model';
 import { SharedModule } from '../shared/shared.module';
+import { PopoverController } from '@ionic/angular';
+import { CustomPopoverComponent } from '../custom-popover/custom-popover.component';
 
 @Component({
   selector: 'app-device',
@@ -10,7 +12,7 @@ import { SharedModule } from '../shared/shared.module';
 export class DeviceComponent implements OnInit {
   @Input() device: Device | undefined;
   created_at: String = '';
-  constructor() { }
+  constructor(private popocerCtrl: PopoverController) { }
 
   ngOnInit() {
     // Call the changeDateFormat function to format the date on component initialization

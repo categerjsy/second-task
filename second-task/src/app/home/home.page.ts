@@ -8,6 +8,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class HomePage {
   authorized: boolean = false;
+  addDevices: boolean = false;
 
 
   constructor(private authService: AuthService) { }
@@ -23,5 +24,10 @@ export class HomePage {
   // Method to check if the user is authorized
   checkAuthorization() {
     this.authorized = this.authService.isLoggedIn(); // Set authorized to true if logged in
+  }
+
+  // Method to toggle the visibility of the add devices section
+  openAddDevice() {
+    this.addDevices = true;
   }
 }

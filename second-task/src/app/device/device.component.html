@@ -1,19 +1,19 @@
 <div class='device-container' *ngIf="device">
 
-  <div class="header">
-    <div class="lines">
-      <h3>{{ device.manufacturer }} - {{ device.model }}</h3>
-      <p class="uuid">{{ device.deviceUUID }}</p>
-    </div>
-    <img src="assets/images/dots/black/more.png" class="more" alt="more" />
-  </div>
+  <ion-row class="header">
+    <ion-col size="11">
+      <div class="lines">
+        <h3>{{ device.manufacturer }} - {{ device.model }}</h3>
+        <p class="uuid">{{ device.deviceUUID }}</p>
+      </div>
+    </ion-col>
+    <ion-col size="1">
+      <ion-img id="testTrigger" src="assets/images/dots/black/more.png" class="more" alt="more"></ion-img>
+     
+    </ion-col>
+  </ion-row>
 
-  <!-- <ion-popover mode="ios" [isOpen]="true">
-    <ng-template>
-      <ion-content>{{'device.edit'|translate}}</ion-content>
-      <ion-content>{{'device.delete'|translate}}</ion-content>
-    </ng-template>
-  </ion-popover> -->
+<app-custom-popover [triggerId]="'testTrigger'"></app-custom-popover>
 
   <hr>
   <div class="footer">

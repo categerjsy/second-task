@@ -1,0 +1,121 @@
+<div class="modal-overlay">
+  <div class="modal">
+    <!-- Modal Header -->
+
+    <div class="modal-header">
+      <ion-col size="11">
+        <h2>{{ 'device-form.title' | translate }}</h2>
+      </ion-col>
+      <ion-col size="1">
+        <div class="button-close">
+          <img src="assets/images/close-btn/close.svg" alt="Close" class="close-btn" />
+        </div>
+      </ion-col>
+    </div>
+
+    <!-- Modal Body -->
+    <div class="modal-body">
+      <ion-row class="with-box">
+        <ion-col size="1">
+          <div class="blue-rectangle"></div>
+        </ion-col>
+        <ion-col size="11">
+          <div class="form-title">{{ 'device-form.general-info' | translate }}</div>
+        </ion-col>
+      </ion-row>
+
+
+      <div class="first">
+        <div class="line-form">
+          <div class="attribute">
+            <div class="form-group">
+              <label for="manufacturer">{{ 'device-form.manufacturer' | translate }}</label>
+              <ion-input type="text" id="manufacturer" placeholder="{{ 'device-form.p-manufacturer' | translate }}"
+                class="form-input">
+              </ion-input>
+            </div>
+          </div>
+          <div class="attribute">
+            <div class="form-group">
+              <label for="model">{{ 'device-form.model' | translate }}</label>
+              <ion-input type="text" id="model" placeholder="{{ 'device-form.p-model' | translate }}"
+                class="form-input">
+              </ion-input>
+            </div>
+          </div>
+        </div>
+
+        <div class="line-form">
+          <div class="attribute">
+            <div class="form-group">
+              <label for="manufacturer">{{ 'device-form.p-os'| translate }}</label>
+              <ion-input type="text" id="p-os'" placeholder="{{ 'device-form.p-os'| translate }}" class="form-input">
+              </ion-input>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <ion-row class="with-box">
+        <ion-col size="1">
+          <div class="blue-rectangle"></div>
+        </ion-col>
+        <ion-col size="11">
+          <div class="form-title">{{ 'device-form.identifier-info' | translate }}</div>
+        </ion-col>
+      </ion-row>
+
+      <div class="line-form">
+        <div class="attribute">
+          <div class="form-group">
+            <label for="identifier">{{ 'device-form.identifier' | translate }}</label>
+            <div class="identifier-group">
+              <ion-input type="text" id="identifier" placeholder="{{ 'device-form.p-identifier' | translate }}" class="form-input ident"/>
+              <ion-button type="button" class="create-btn">
+                {{ 'device-form.generate' | translate }}
+              </ion-button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <form>
+      
+ 
+          <legend>{{ 'device-form.general-info' | translate }}</legend>
+          <div class="form-group">
+            <label for="manufacturer">{{ 'device-form.manufacturer' | translate }}</label>
+            <input type="text" id="manufacturer" placeholder="{{ 'device-form.p-manufacturer' | translate }}" />
+          </div>
+          <div class="form-group">
+            <label for="model">{{ 'device-form.model' | translate }}</label>
+            <input type="text" id="model" placeholder="{{ 'device-form.p-model' | translate }}" />
+          </div>
+          <div class="form-group">
+            <label for="os">{{ 'device-form.os' | translate }}</label>
+            <input type="text" id="os" placeholder="{{ 'device-form.p-os' | translate }}" />
+          </div>
+      
+
+   
+          <legend>{{ 'device-form.identifier-info' | translate }}</legend>
+          <div class="form-group">
+            <label for="identifier">{{ 'device-form.identifier' | translate }}</label>
+            <div class="identifier-group">
+              <input type="text" id="identifier" placeholder="{{ 'device-form.p-identifier' | translate }}" />
+              <button type="button" class="create-btn">
+                {{ 'device-form.generate' | translate }}
+              </button>
+            </div>
+          </div>
+  
+
+        <button type="submit" class="submit-btn">
+          {{ 'device-form.add' | translate }} 
+        </button>
+      </form> -->
+    </div>
+  </div>
+</div>
